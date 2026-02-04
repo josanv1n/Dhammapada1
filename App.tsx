@@ -23,10 +23,10 @@ const HeroSection: React.FC<{ title: string; subtitle: string; image: string }> 
     </div>
     
     <div className="relative z-10 max-w-4xl">
-      <h2 className="text-4xl md:text-7xl font-techno font-bold mb-4 glow-text tracking-tighter uppercase leading-none">
+      <h2 className="text-4xl md:text-7xl font-techno font-bold mb-4 glow-text tracking-tighter uppercase leading-none text-left">
         {title}
       </h2>
-      <p className="text-amber-400/90 text-lg md:text-xl max-w-2xl font-dhamma italic leading-relaxed">
+      <p className="text-amber-400/90 text-lg md:text-xl max-w-2xl font-dhamma italic leading-relaxed text-left">
         "{subtitle}"
       </p>
     </div>
@@ -47,7 +47,7 @@ const HomeView: React.FC<{ onNavigate: (view: ViewState) => void }> = ({ onNavig
         image="https://images.unsplash.com/photo-1542372410-720c7885b5d1?auto=format&fit=crop&q=80&w=2000"
       />
       
-      <div className="px-6 md:px-12 py-16 max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+      <div className="px-6 md:px-12 py-16 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 text-left">
         <div className="glass p-8 rounded-3xl border-t-2 border-amber-500/50 flex flex-col justify-between">
           <div>
             <div className="flex items-center gap-2 mb-6">
@@ -69,8 +69,8 @@ const HomeView: React.FC<{ onNavigate: (view: ViewState) => void }> = ({ onNavig
 
         <div className="space-y-6">
           <div className="glass p-8 rounded-3xl border border-slate-800 hover:border-blue-500/30 transition-colors group">
-            <h3 className="font-techno text-lg text-blue-400 mb-4 group-hover:glow-text transition-all text-left">Sastra Suci Dhammapada</h3>
-            <p className="text-slate-400 leading-relaxed font-light text-left">
+            <h3 className="font-techno text-lg text-blue-400 mb-4 group-hover:glow-text transition-all">Sastra Suci Dhammapada</h3>
+            <p className="text-slate-400 leading-relaxed font-light">
               Dhammapada adalah bagian dari Khuddaka Nikaya, Sutta Pitaka. Terdiri dari 423 bait syair yang merupakan rangkuman ajaran moral dan filsafat Buddha Gautama.
             </p>
           </div>
@@ -205,7 +205,7 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            <section className="px-6 md:px-12 py-16 max-w-5xl mx-auto">
+            <section className="px-6 md:px-12 py-16 max-w-5xl mx-auto text-left">
               <div className="grid gap-16">
                 {filteredVerses.length > 0 ? (
                   filteredVerses.map((verse) => (
@@ -224,11 +224,11 @@ const App: React.FC = () => {
                           </div>
                         </div>
 
-                        <h3 className="font-dhamma text-2xl md:text-3xl text-slate-300 italic mb-10 text-left leading-relaxed border-l-2 border-slate-800 pl-8">
+                        <h3 className="font-dhamma text-2xl md:text-3xl text-slate-300 italic mb-10 leading-relaxed border-l-2 border-slate-800 pl-8">
                           "{verse.pali}"
                         </h3>
                         
-                        <p className="font-dhamma text-xl md:text-2xl text-slate-100 text-left leading-relaxed font-semibold relative">
+                        <p className="font-dhamma text-xl md:text-2xl text-slate-100 leading-relaxed font-semibold relative">
                           {verse.translation}
                           <span className="absolute -bottom-4 left-0 w-12 h-1 bg-amber-500 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700" />
                         </p>
@@ -278,7 +278,7 @@ const App: React.FC = () => {
 
       {/* MOBILE TOP NAVIGATION BAR */}
       <div className="md:hidden flex items-center justify-between p-4 glass sticky top-0 z-[60] border-b border-slate-900">
-        <div className="flex items-center gap-2" onClick={() => navigate('utama')}>
+        <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('utama')}>
           <Dharmachakra className="w-8 h-8" />
           <span className="font-techno font-black text-sm tracking-tighter">DHAMMAPADA</span>
         </div>
@@ -319,8 +319,8 @@ const App: React.FC = () => {
             </div>
           </div>
           
-          <nav className="space-y-2 mb-12">
-             <h2 className="text-[10px] font-techno uppercase tracking-widest text-slate-600 mb-4 px-2 text-left">Menu Utama</h2>
+          <nav className="space-y-2 mb-12 text-left">
+             <h2 className="text-[10px] font-techno uppercase tracking-widest text-slate-600 mb-4 px-2">Menu Utama</h2>
              {[
                { id: 'utama', label: 'Halaman Utama', icon: <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /> },
                { id: 'syair', label: 'Syair Suci', icon: <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /> },
@@ -344,8 +344,8 @@ const App: React.FC = () => {
           </nav>
 
           {currentView === 'syair' && (
-            <div className="space-y-1 animate-in slide-in-from-left-4 duration-500">
-              <h2 className="text-[10px] font-techno uppercase tracking-widest text-slate-600 mb-4 px-2 text-left">Vagga (Bab)</h2>
+            <div className="space-y-1 animate-in slide-in-from-left-4 duration-500 text-left">
+              <h2 className="text-[10px] font-techno uppercase tracking-widest text-slate-600 mb-4 px-2">Vagga (Bab)</h2>
               <div className="grid gap-2">
                 {DHAMMAPADA_DATA.map((vagga) => (
                   <button
@@ -373,12 +373,12 @@ const App: React.FC = () => {
           )}
         </div>
         
-        <div className="p-8 border-t border-slate-900 bg-slate-950/40 backdrop-blur-md">
+        <div className="p-8 border-t border-slate-900 bg-slate-950/40 backdrop-blur-md text-left">
           <div className="flex items-center gap-3 mb-4">
             <Lotus className="w-4 h-4 text-amber-600" />
             <span className="text-[9px] font-techno text-slate-600 uppercase tracking-widest">Digital Dhamma v1.0</span>
           </div>
-          <p className="text-[10px] text-slate-500 leading-relaxed font-light italic text-left">
+          <p className="text-[10px] text-slate-500 leading-relaxed font-light italic">
             "Semoga semua makhluk terbebas dari penderitaan."
           </p>
         </div>
