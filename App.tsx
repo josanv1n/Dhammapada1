@@ -16,17 +16,17 @@ const HeroSection: React.FC<{ title: string; subtitle: string; image: string }> 
       <img 
         src={image} 
         alt="Thematic Visual" 
-        className="w-full h-full object-cover opacity-50 scale-105 transition-transform duration-10000 hover:scale-110"
+        className="w-full h-full object-cover opacity-60 scale-105 transition-transform duration-10000 hover:scale-110"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
-      <div className="absolute inset-0 bg-blue-900/10 mix-blend-overlay" />
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />
+      <div className="absolute inset-0 bg-amber-900/10 mix-blend-overlay" />
     </div>
     
     <div className="relative z-10 max-w-4xl">
-      <h2 className="text-4xl md:text-7xl font-techno font-bold mb-4 glow-text tracking-tighter uppercase leading-none text-left">
+      <h2 className="text-4xl md:text-7xl font-techno font-bold mb-4 glow-text tracking-tighter uppercase leading-none text-left text-amber-500">
         {title}
       </h2>
-      <p className="text-amber-400/90 text-lg md:text-xl max-w-2xl font-dhamma italic leading-relaxed text-left">
+      <p className="text-slate-200 text-lg md:text-xl max-w-2xl font-dhamma italic leading-relaxed text-left drop-shadow-lg">
         "{subtitle}"
       </p>
     </div>
@@ -44,11 +44,11 @@ const HomeView: React.FC<{ onNavigate: (view: ViewState) => void }> = ({ onNavig
       <HeroSection 
         title="Dhammapada Digital" 
         subtitle="Jalan Menuju Kebijaksanaan dan Kedamaian Batin melalui Bait-Bait Suci."
-        image="https://images.unsplash.com/photo-1542372410-720c7885b5d1?auto=format&fit=crop&q=80&w=2000"
+        image="https://images.unsplash.com/photo-1605417672237-7e62a221f73d?q=80&w=2070&auto=format&fit=crop"
       />
       
       <div className="px-6 md:px-12 py-16 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 text-left">
-        <div className="glass p-8 rounded-3xl border-t-2 border-amber-500/50 flex flex-col justify-between">
+        <div className="glass p-8 rounded-3xl border-t-2 border-amber-500/50 flex flex-col justify-between shadow-[0_0_50px_rgba(245,158,11,0.1)]">
           <div>
             <div className="flex items-center gap-2 mb-6">
               <span className="w-8 h-[1px] bg-amber-500" />
@@ -61,7 +61,7 @@ const HomeView: React.FC<{ onNavigate: (view: ViewState) => void }> = ({ onNavig
           </div>
           <button 
             onClick={() => onNavigate('syair')}
-            className="mt-8 self-start px-6 py-3 bg-amber-500/10 hover:bg-amber-500 text-amber-500 hover:text-slate-950 border border-amber-500/30 rounded-xl transition-all duration-300 font-techno text-xs uppercase tracking-widest"
+            className="mt-8 self-start px-6 py-3 bg-amber-500/10 hover:bg-amber-500 text-amber-500 hover:text-slate-950 border border-amber-500/30 rounded-xl transition-all duration-300 font-techno text-xs uppercase tracking-widest shadow-lg shadow-amber-500/10"
           >
             Pelajari Lebih Lanjut
           </button>
@@ -95,7 +95,7 @@ const KontakView: React.FC = () => (
     <HeroSection 
       title="Hubungi Kami" 
       subtitle="Menjalin Dhamma, Menyebarkan Kedamaian bagi Semua Makhluk."
-      image="https://images.unsplash.com/photo-1542152336-e0e6878e178c?auto=format&fit=crop&q=80&w=2000"
+      image="https://images.unsplash.com/photo-1596766746914-749e798935c3?q=80&w=2069&auto=format&fit=crop"
     />
     <div className="px-6 md:px-12 py-16 max-w-4xl mx-auto w-full flex-1">
       <div className="glass p-10 rounded-3xl border border-slate-800 space-y-12">
@@ -187,7 +187,7 @@ const App: React.FC = () => {
             <HeroSection 
               title={selectedVagga.title} 
               subtitle={selectedVagga.translation}
-              image="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=2000"
+              image="https://images.unsplash.com/photo-1621160364344-91c6e615e47e?q=80&w=2070&auto=format&fit=crop"
             />
 
             <div className="sticky top-0 z-30 px-6 md:px-12 py-6 glass-subtle border-b border-slate-800/50 backdrop-blur-xl">
